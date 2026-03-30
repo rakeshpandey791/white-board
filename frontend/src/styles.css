@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.theme-light {
+  color: #0f172a;
+}
+
+.theme-light .bg-slate-950 {
+  background-color: #f8fafc !important;
+}
+
+.theme-light .bg-slate-900,
+.theme-light .bg-panel,
+.theme-light .bg-panel\/90,
+.theme-light .bg-panel\/95 {
+  background-color: #ffffff !important;
+}
+
+.theme-light .bg-slate-800 {
+  background-color: #e2e8f0 !important;
+}
+
+.theme-light .border-slate-700,
+.theme-light .border-slate-600 {
+  border-color: #cbd5e1 !important;
+}
+
+.theme-light .text-slate-500 {
+  color: #64748b !important;
+}
+
+.theme-light .text-slate-400 {
+  color: #475569 !important;
+}
+
+.theme-light .text-slate-300,
+.theme-light .text-slate-200 {
+  color: #334155 !important;
+}
+
+.theme-light .text-slate-100 {
+  color: #0f172a !important;
+}
+
+.theme-light .text-white {
+  color: #0f172a !important;
+}
+
+.comment-highlight {
+  background: rgba(250, 204, 21, 0.32);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.comment-highlight:hover {
+  background: rgba(250, 204, 21, 0.48);
+}
+
+.comment-highlight-active {
+  background: rgba(251, 191, 36, 0.6) !important;
+  box-shadow: 0 0 0 1px rgba(251, 191, 36, 0.75);
+}
+
+.theme-light .comment-highlight {
+  background: rgba(245, 158, 11, 0.28);
+}
+
+.theme-light .comment-highlight:hover {
+  background: rgba(245, 158, 11, 0.42);
+}
+
+.theme-light .comment-highlight-active {
+  background: rgba(245, 158, 11, 0.55) !important;
+  box-shadow: 0 0 0 1px rgba(217, 119, 6, 0.75);
+}
