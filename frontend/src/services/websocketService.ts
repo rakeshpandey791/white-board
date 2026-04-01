@@ -1,6 +1,14 @@
 import { Client, StompSubscription } from '@stomp/stompjs';
 import SockJS from 'sockjs-client';
 
+const wsEndpoint = (() => {
+  const configured = (import.meta.env.VITE_WS_ENDPOINT as string | undefined)?.trim();
+  if (!configured) {
+    return '/ws';
+  }
+  return configured.replace(/\/+$/, '');
+})();
+
 class WebSocketService {
   private client?: Client;
   private onConnectedCallbacks: Array<() => void> = [];
@@ -20,7 +28,7 @@ class WebSocketService {
     const token = localStorage.getItem('access_token');
 
     this.client = new Client({
-      webSocketFactory: () => new SockJS('/ws'),
+      webSocketFactory: () => new SockJS(wsEndpoint),
       reconnectDelay: 2000,
       connectHeaders: token ? { Authorization: 'Bearer ' + token } : {},
       onConnect: () => {

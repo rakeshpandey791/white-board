@@ -11,6 +11,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.config.Customizer;
 
 @Configuration
 @EnableWebSecurity
@@ -28,6 +29,7 @@ public class SecurityConfig {
                 .csrf((csrf) -> csrf.disable())
                 .httpBasic((basic) -> basic.disable())
                 .formLogin((form) -> form.disable())
+                .cors(Customizer.withDefaults())
                 .authorizeHttpRequests((auth) -> auth
                         .requestMatchers("/api/auth/**", "/ws/**").permitAll()
                         .anyRequest().authenticated())
