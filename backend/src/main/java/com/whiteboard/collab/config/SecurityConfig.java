@@ -31,7 +31,7 @@ public class SecurityConfig {
                 .formLogin((form) -> form.disable())
                 .cors(Customizer.withDefaults())
                 .authorizeHttpRequests((auth) -> auth
-                        .requestMatchers("/api/auth/**", "/ws/**").permitAll()
+                        .requestMatchers("/api/auth/**", "/api/health", "/ws/**").permitAll()
                         .anyRequest().authenticated())
                 .sessionManagement((session) -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .exceptionHandling((exceptions) -> exceptions.authenticationEntryPoint(unauthorizedEntryPoint()))
