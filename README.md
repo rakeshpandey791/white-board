@@ -121,6 +121,13 @@ Both are free-friendly.
 - Neon account (PostgreSQL)
 - Upstash account (Redis) OR disable Redis via `REDIS_ENABLED=false`
 
+### Env templates in repo
+
+- Backend template: `backend/.env.example`
+- Frontend template: `frontend/.env.example` and `frontend/.env.production.example`
+
+Use these as a source of truth for Render environment keys.
+
 ---
 
 ### Step A - Prepare Backend Environment Variables
